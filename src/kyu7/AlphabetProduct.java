@@ -30,6 +30,24 @@ public class AlphabetProduct {
     }
 
     /**
+     * A, B, C, D, AxB, BxC, CxD, DxA
+     * Assumptions:
+     *  when sorted then CxD is on the 7th index
+     *  A is on 0th index
+     *  B is on 1st index
+     *  The aim is to find the C which can be on the 2nd index or on 3rd index
+     *  Possible ordered array can be:
+     *      A, B, C, X1, X2, X3, X4, CxD
+     *      A, B, AxB, C, X1, X2, X3, CxD
+     * @param input
+     * @return
+     */
+    public static int alphabetClever(int[] input) {
+        Arrays.sort(input);
+        return input[7] / (input[0] * input[1] == input[2] ? input[3] : input[2]);
+    }
+
+    /**
      * Find the second input number of the product then remove the product and second number it-self.
      * Finally return the second number.
      * @param input - list of numbers (including product) without the first number
