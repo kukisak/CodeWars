@@ -1,6 +1,6 @@
-package kyu7;
+package kyu6;
 
-import org.junit.jupiter.api.Test;
+import kyu6.FindOddNumber;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

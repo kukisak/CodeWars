@@ -1,5 +1,6 @@
-package kyu7;
+package kyu6;
 
+import kyu6.MultipliesOf3and5;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
