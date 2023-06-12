@@ -38,14 +38,14 @@ class MorseCodeDecoderTest {
 
     public static Stream<Arguments> testGetTimeUnit() {
         return Stream.of(
-//                Arguments.of(1, 1, 7, 3, 0, "E T"),
-//                Arguments.of(1, 1, 0, 0, 0, "E"),
-//                Arguments.of(0, 0, 0, 0, 0, "Empty"),
-//                Arguments.of(2, 2, 0, 0, 0, "E"),
-//                Arguments.of(3, 3, 0, 0, 0, "T"),
-//                Arguments.of(1, 3, 7, 1, 0, "T E"),
-//                Arguments.of(1, 3, 0, 1, 0, "TE"),
-//                Arguments.of(2, 2, 2, 0, 0, "EE"),
+                Arguments.of(1, 1, 7, 3, 0, "E T"),
+                Arguments.of(1, 1, 0, 0, 0, "E"),
+                Arguments.of(0, 0, 0, 0, 0, "Empty"),
+                Arguments.of(2, 2, 0, 0, 0, "E"),
+                Arguments.of(3, 3, 0, 0, 0, "T"),
+                Arguments.of(1, 3, 7, 1, 0, "T E"),
+                Arguments.of(1, 3, 0, 1, 0, "TE"),
+                Arguments.of(2, 2, 2, 0, 0, "EE"),
                 Arguments.of(1, 3, 1, 0, 0, "M")
         );
     }

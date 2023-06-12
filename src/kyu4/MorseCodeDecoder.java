@@ -209,26 +209,30 @@ public class MorseCodeDecoder {
      * @return time unit of 1 dot character
      */
     protected static int getTimeUnit(int first1sLength, int first0sLength, int nextDiff1sLength, int nextDiff0sLength) {
-        if (first1sLength == 0 || nextDiff1sLength == 0) {
+        if (first1sLength == 0) {
             return first1sLength;
         }
-        if (first1sLength != nextDiff1sLength) {
+        if (first1sLength != nextDiff1sLength && nextDiff1sLength != 0) {
             return Math.min(first1sLength, nextDiff1sLength);
-        } else {
-            if (first0sLength != nextDiff0sLength) {
-                if (first0sLength > nextDiff0sLength) {
-                    int tmp = first0sLength;
-                    first0sLength = nextDiff0sLength;
-                    nextDiff0sLength = tmp;
-                }
-                if (nextDiff0sLength % 7 == first0sLength % 3) {
-                    return first0sLength % 3;
-                } else {
-                    return first0sLength;
-                }
+        }
+        if (first0sLength != nextDiff0sLength && nextDiff0sLength != 0) {
+            if (first0sLength > nextDiff0sLength) {
+                int tmp = first0sLength;
+                first0sLength = nextDiff0sLength;
+                nextDiff0sLength = tmp;
+            }
+            if (nextDiff0sLength % 7 == first0sLength % 3) {
+                return first0sLength % 3;
             } else {
                 return first0sLength;
             }
         }
+        if (first0sLength > 0
+                && nextDiff1sLength == nextDiff0sLength
+                && nextDiff1sLength == 0
+                && first0sLength <= first1sLength) {
+            return first0sLength;
+        }
+        return first1sLength;
     }
 }
