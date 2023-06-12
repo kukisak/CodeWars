@@ -21,7 +21,7 @@ public class MorseCodeDecoder {
             "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",
             "-----", "--..--", ".-.-.-", "..--.." };
     
-    static final Map<String, String> MorseCode;
+    public static final Map<String, String> MorseCode;
     static {
         MorseCode = new HashMap<>();
         for (int i = 0; i < morse.length; i++) {
