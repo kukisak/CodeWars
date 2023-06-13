@@ -45,6 +45,21 @@ public class MorseCodeDecoderClever {
         return rate;
     }
 
+    public static int getRateBest(String bits) {
+        return Math.min(
+                getRateBest(bits, "1"),
+                getRateBest(bits, "0")
+        );
+    }
+
+    public static int getRateBest(String bits, String delimiter) {
+        return Pattern.compile("(" + delimiter + "+)").splitAsStream(bits)
+            .filter(str -> str.length() != 0)
+            .mapToInt(String::length)
+            .min()
+            .orElse(Integer.MAX_VALUE);
+    }
+
     /**
      * Decode input morse code to english sentence
      * @param morseCode input morse code
