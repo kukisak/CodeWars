@@ -20,6 +20,11 @@ class ProductFibonacciTest {
     void testClever(long[] expected, long input) {
         assertArrayEquals(expected, ProductFibonacci.productFibClever(input));
     }
+    @ParameterizedTest
+    @MethodSource("cases")
+    void testCleverStream(long[] expected, long input) {
+        assertArrayEquals(expected, ProductFibonacci.productFibCleverStream(input));
+    }
     public static Stream<Arguments> cases() {
         return Stream.of(
                 Arguments.of(new long[] {55, 89, 1}, 4895),
